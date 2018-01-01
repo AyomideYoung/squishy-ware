@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+<xs:element name="code">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="keywords"   ref="keywords" />
+            <xs:element name="comments" ref="keywords"  />
+            <xs:element name="function-def" type="function-style" />
+            <xs:element name="numberOfSpaces" type="xs:integer"  />
+        </xs:sequence>
+        
+    </xs:complexType>
+    
+</xs:element>
+    
+    
+    <!--Out of main content-->
+    
+    <xs:element name="keywords">
+        <xs:complexType>
+            <xs:sequence>
+                <!--Stands for Color-Red -->
+                <xs:element name="Color-R" type="xs:integer" />
+                <!--Stands for Color-Green -->
+                <xs:element name="Color-G" type="xs:integer"/>
+                <!--Stands for Color-Blue -->
+                <xs:element name="Color-B" type="xs:integer" />
+                <xs:element name="keyword-list" type="list" />
+                
+            </xs:sequence>
+        </xs:complexType> 
+            
+    </xs:element>
+    
+    
+    <xs:complexType name="list">
+        <xs:sequence>
+            <xs:element name="keyword" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>    
+    
+    <xs:element name="function-style">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="indentation" />
+                    <xs:enumeration value="curly-braces" />
+                </xs:restriction>    
+                
+            </xs:complexContent>
+            
+        </xs:complexType>
+    </xs:element>        
+    
+    
+</xs:schema>

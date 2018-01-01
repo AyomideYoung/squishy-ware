@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <xs:element name="msg" type="msgCont" />
+    <xs:complexType name="msgCont">
+        <xs:sequence>
+            <xs:element name="sender" type="xs:string" />
+            <xs:element name="recipent" type="xs:string" />
+            <xs:element name="sentTime" type="xs:dateTime" />
+            <xs:element name="seenTime" type="xs:dateTime" />
+            <xs:element name="body" type="bodyCont" />
+        </xs:sequence>
+        </xs:complexType>
+    <xs:complexType name="bodyCont" mixed="true" > 
+        <xs:sequence>
+            <xs:group ref="content" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>   
+    </xs:complexType>
+    
+    <xs:group name="content">
+        <xs:choice>
+            <xs:element name="link"  >
+               <xs:complexType >
+                 <xs:choice>
+                   <xs:element ref="img" maxOccurs="unbounded" />
+                  
+                   
+                
+                </xs:choice>
+                <xs:attribute name="href" type="xs:anyURI"  />
+               </xs:complexType>
+          
+            </xs:element>
+            <xs:element ref="img" minOccurs="0" maxOccurs="unbounded" />
+               
+        
+            <xs:element name="code" type="xs:string" />
+      
+        </xs:choice>
+    </xs:group>
+       <xs:element name="img"  >
+                  <xs:complexType  >
+                      <xs:attribute name="src" type="xs:anyURI"  />
+                  </xs:complexType>
+              </xs:element>
+          
+</xs:schema>
