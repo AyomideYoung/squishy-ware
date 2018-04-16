@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+
+<body>
+<style>
+ul{
+background-color:blue;
+}
+
+li{
+float:left;
+}
+
+</style>
+
+<ul>
+<li> Me </li>
+<li> Go </li>
+<li> Stop</li>
+</ul>
+</body>
+</html>
