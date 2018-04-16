@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<!--
+To change this license header, choose License Headers in Project Properties.
+
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+
+-->
+
+<html>
+
+    <head>
+
+        <title>SquishyWare</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="layout.css" rel="stylesheet" type="text/css"/>
+        <meta name="author" content="Bakare Ayomide">
+    </head>
+
+    
+    <body>
+
+        	<div class="mainbar">
+		 <img src="welcome.jpg" alt="SquishyWare">
+                <ul class="h-nav">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Friends</a></li>
+                    <li><a href="#">Community</a></li>
+                </ul>
+		</div>
+        <h1>My SquishyPage</h1>
+        
+        <!--
+        Contains the user's image, name and bio
+        -->
+        <div class="profile">
+        <div class="mini-profile">
+            <img src="me-crop.png" alt="Image" width="128"
+                 height="128"> 
+            <span>Bakare Ayomide</span>
+        </div>
+            <span id="profile-button" onclick="openBio()">View Profile</span>
+            <div id="bio">
+                I am a completely self taught programmer. I'm a high
+                school student in the eleventh grade. I reside in
+                Lagos, Nigeria. I am currently unemployed but I aspire
+                to be a freelancer. The projects I'm working on are
+                SquishyWare(this website), FarmDiary and QuestionsHub.
+                I know a lot about JavaSE and I am trying to learn JavaEE
+                for a chance in enterprise. 
+            </div>
+        </div>
+        <script>
+          function openBio(){
+             var display =document.getElementById("bio").style;
+             var isViewing;
+              if(!(display.display==="block")){
+                  display.display="block";
+                 isViewing=true;
+              }
+               else {  
+                   display.display="none";
+                   isViewing=false;
+               }
+              if(isViewing){
+                 document.getElementById("profile-button").innerHTML="Hide Profile";
+              }
+              else{
+                  document.getElementById("profile-button").innerHTML="View Profile";
+              }
+            
+          }  
+        </script>
+        <div class="main">
+            <ul class="h-nav" >
+                <li><a href="#" class="active">Code</a></li>
+                <li><a href="#">Questions</a></li>
+            </ul>
+            <div class="code-list">
+            <div class="code-item">
+                <img src="file.png" alt="file" >
+                <span class="text">Bold.java</span>
+            </div>
+            <div class="code-item">
+                <img src="file.png" alt="file">
+                <span class="text">BrowserHistory.py</span>
+            </div>
+            </div>
+        </div>
+        
+            
+        
+        
+    </body>
+
+</html>
